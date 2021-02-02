@@ -14,19 +14,35 @@ public class GraphSearch {
             //Part 1:
             //The agents will perform the sequence of actions returned by this method.
             //Try to solve a few levels by hand, enter the found solutions below, and run them:
-
+            
+            System.err.println("agentRows[0]"+initialState.agentRows[0]);
+            System.err.println("agentCols[0]"+initialState.agentCols[0]);
+            
             return new Action[][] {
                 {Action.MoveS},
                 {Action.MoveE},
                 {Action.MoveE},
                 {Action.MoveS},
-                {Action.MoveS},
                 {Action.MoveE},
                 {Action.MoveE},
-
+                {Action.MoveE},
+                {Action.MoveE},
+                {Action.MoveE},
+                {Action.MoveE},
+                {Action.MoveE},
+                {Action.MoveE},
+                {Action.MoveE},
+                {Action.MoveE},
+                {Action.MoveE},
+                {Action.MoveE},
+                {Action.MoveE},
+                {Action.MoveE},
+              //  {Action.Push},
+                //push
 
             };
         } else {
+          
             //Part 2:
             //Now try to implement the Graph-Search algorithm from R&N figure 3.7
             //In the case of "failure to find a solution" you should return null.
@@ -41,20 +57,25 @@ public class GraphSearch {
             //You might also find it helpful to print out these stats when a solution has been found, so you can keep 
             //track of the exact total number of states generated.
 
-
+            
             int iterations = 0;
-
+            
+            //If not visited
             frontier.add(initialState);
             HashSet<State> explored = new HashSet<>();
-
+            
             while (true) {
 
                 //Print a status message every 10000 iteration
                 if (++iterations % 10000 == 0) {
                     printSearchStatus(explored, frontier);
                 }
-
+                
                 //Your code here...
+                
+                if(initialState.isGoalState()){
+                    return  initialState.extractPlan();
+                }
             }
         }
     }
