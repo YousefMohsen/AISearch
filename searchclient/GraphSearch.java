@@ -20,6 +20,11 @@ public class GraphSearch {
                 {Action.MoveE},
                 {Action.MoveE},
                 {Action.MoveS},
+                {Action.MoveS},
+                {Action.MoveE},
+                {Action.MoveE},
+
+
             };
         } else {
             //Part 2:
